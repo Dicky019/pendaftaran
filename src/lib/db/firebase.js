@@ -1,6 +1,6 @@
-import { initializeApp,getApps,getApp } from 'firebase/app';
+import { initializeApp, getApps, getApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
-import { getAuth, } from 'firebase/auth';
+import { getAuth } from 'firebase/auth';
 
 const config = {
 	apiKey: 'AIzaSyBl2ZL-IdeiHulplNu1de-avhhzEWaBplo',
@@ -16,15 +16,15 @@ const config = {
 let db;
 let apps;
 if (!getApps.length) {
-apps =	initializeApp(config);
- }else {
+	apps = initializeApp(config);
+} else {
 	getApp(); // if already initialized, use that one
- }
+}
 
-db = getFirestore(apps)
+db = getFirestore(apps);
 
-var app = getAuth()
+var auth = getAuth();
 
-console.log("jalan")
+console.log('jalan');
 
-export {db,app}
+export { db, auth };
